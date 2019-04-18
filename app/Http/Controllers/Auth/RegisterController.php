@@ -30,22 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    // protected $redirectTo = '/backend/user';
-    protected $redirectTo;
-
-    protected function redirectTo()
-    {
-        $this->redirectTo = '/backend/user';
-
-        return $this->redirectTo->with('feedback', 'บันทึกข้อมูลเรียบร้อยแล้ว');
-    }
-
-    // protected function redirectTo()
-    // {
-    //     session()->with('feedback', 'บันทึกข้อมูลเรียบร้อยแล้ว');
-
-    //     return '/backend/user';
-    // }
+    protected $redirectTo = '/backend/user';
 
     /**
      * Create a new controller instance.
