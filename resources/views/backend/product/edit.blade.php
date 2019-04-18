@@ -42,14 +42,14 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputName3">จำนวนสินค้า</label>
-                                                    {{ Form::text('stock', null,['class'=>'form-control ','placeholder' => 'จำนวนสินค้าทั้งหมด','required']) }}
+                                                    {{ Form::text('stock', null,['class'=>'form-control stock ','placeholder' => 'จำนวนสินค้าทั้งหมด','required']) }}
                                                         @if ($errors->has('stock'))
                                                             <div class="invalid-feedback">{{ $errors->first('stock') }}</div>
                                                         @endif
                                             </div>
                                             <div class="form-group">
                                                     <label for="exampleInputName4">ราคาสินค้า</label>
-                                                        {{ Form::text('price', null,['class'=>'form-control ','placeholder' => 'ราคาสินค้าต่อชิ้น','required']) }}
+                                                        {{ Form::text('price', null,['class'=>'form-control price ','placeholder' => 'ราคาสินค้าต่อชิ้น','required']) }}
                                                             @if ($errors->has('price'))
                                                                 <div class="invalid-feedback">{{ $errors->first('price') }}</div>
                                                             @endif
@@ -71,13 +71,13 @@
 @endsection
 
 @section('footerscript')
-
-<!-- Latest compiled and minified CSS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.13.4/jquery.mask.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css">
-
-<!-- Latest compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>
 <script>
     $('select').selectpicker();
+    $('.stock').mask("####", {reverse: true});
+    $('.price').mask("####", {reverse: true});
 </script>
 @endsection

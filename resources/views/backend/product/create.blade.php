@@ -41,14 +41,14 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputName3">จำนวนสินค้า</label>
-                                                    {{ Form::text('stock', null,['class'=>'form-control ','placeholder' => 'จำนวนสินค้าทั้งหมด','required']) }}
+                                                    {{ Form::text('stock', null,['class'=>'form-control stock ','placeholder' => 'จำนวนสินค้าทั้งหมด','required']) }}
                                                         @if ($errors->has('stock'))
                                                             <div class="invalid-feedback">{{ $errors->first('stock') }}</div>
                                                         @endif
                                             </div>
                                             <div class="form-group">
                                                     <label for="exampleInputName4">ราคาสินค้า</label>
-                                                        {{ Form::text('price', null,['class'=>'form-control ','placeholder' => 'ราคาสินค้าต่อชิ้น','required']) }}
+                                                        {{ Form::text('price', null,['class'=>'form-control price ','placeholder' => 'ราคาสินค้าต่อชิ้น','required']) }}
                                                             @if ($errors->has('price'))
                                                                 <div class="invalid-feedback">{{ $errors->first('price') }}</div>
                                                             @endif
@@ -67,4 +67,14 @@
                 </div>
             </div>
 </div>
+@endsection
+
+@section('footerscript')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.13.4/jquery.mask.min.js"></script>
+    <script>
+        $('.stock').mask("####", {reverse: true});
+        $('.price').mask("####", {reverse: true});
+
+    </script>
 @endsection

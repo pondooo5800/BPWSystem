@@ -51,7 +51,7 @@
                                                         <i class="mdi mdi-tooltip-edit"></i>
                                                     </a>
                                                     <form method="POST" class="d-inline"
-                                                            action="{{ route('product.destroy',['product_id'=>$item->product_id]) }}"
+                                                            action="{{ route('user.destroy',['product_id'=>$item->product_id]) }}"
                                                             onsubmit="return confirm('แน่ใจว่าต้องการลบข้อมูล?')">
                                                         @csrf
                                                         @method('DELETE')
