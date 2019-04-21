@@ -32,7 +32,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="pages/tables/basic-table.html">
+                <a class="nav-link" href="{{ route('member.index') }}">
                 <span class="menu-title">ข้อมูลสมาชิก</span>
                 <i class="mdi mdi-contacts menu-icon"></i>
                 </a>

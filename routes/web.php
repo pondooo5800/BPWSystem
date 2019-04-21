@@ -22,3 +22,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/backend/category', 'CategoryController')->middleware('auth');
 Route::resource('/backend/product', 'ProductController')->middleware('auth');
 Route::resource('/backend/user', 'UserController')->middleware('auth');
+Route::resource('/backend/member', 'MemberController')->middleware('auth');

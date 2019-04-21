@@ -7,11 +7,11 @@
         <span class="page-title-icon bg-gradient-primary text-white mr-2">
             <i class="mdi mdi-settings"></i>
         </span>
-        ข้อมูลสินค้า
+        ข้อมูลสมาชิก
     </h3>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <a class="btn btn-gradient-success btn-icon-text" href="{{ route('product.create') }}" role="button">
+            <a class="btn btn-gradient-success btn-icon-text" href="{{ route('member.create') }}" role="button">
                 <i class="mdi mdi-library-plus"></i>
                 เพิ่มรายการ
             </a>
@@ -22,37 +22,37 @@
             <div class="col-lg-12 grid-margin stretch-card">
                     <div class="card">
                       <div class="card-body">
-                      <h4 class="card-title">รายการสินค้าทั้งหมด {{ $product->total() }} รายการ</h4>
+                      <h4 class="card-title">รายการสมาชิกทั้งหมด {{ $member->total() }} รายการ</h4>
                         <table class="table text-center">
                           <thead>
                             <tr>
                               <th>ลำดับ</th>
-                              <th>รหัสสินค้า</th>
-                              <th>โค้ดสินค้า</th>
-                              <th>ชื่อสินค้า</th>
-                              <th>ประเภทสินค้า</th>
-                              <th>จำนวนสินค้า</th>
-                              <th>ราคาสินค้า</th>
+                              <th>รหัสสมาชิก</th>
+                              <th>รหัสประจำตัวนักเรียน</th>
+                              <th>ชื่อสมาชิก</th>
+                              <th>เพศ</th>
+                              <th>จำนวนครั้งที่ใช้บริการ</th>
+                              <th>วัน/เวลาที่สมัคร</th>
                               <th>เครื่องมือ</th>
                             </tr>
                           </thead>
                           <tbody>
-                            @foreach ($product as $item)
+                            @foreach ($member as $item)
                                 <tr>
                                     <th scope="row">{{ $loop->iteration }}</th>
-                                    <td>{{ $item->product_id }}</td>
+                                    <td>{{ $item->member_id }}</td>
                                     <td>{{ $item->code }}</td>
                                     <td class="text-left">{{ $item->name }}</td>
-                                    <td class="text-left">{{ $item->category_name }}</td>
-                                    <td>{{ $item->stock }}</td>
-                                    <td>{{ number_format($item->price,2) }}</td>
+                                    <td class="text-left">{{ $item->gender }}</td>
+                                    <td>{{ $item->total }}</td>
+                                    <td>{{ $item->created_at }}</td>
                                     <td>
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <a href="{{ route('product.edit',['product_id'=>$item->product_id]) }}" class="btn btn-gradient-success btn-sm">
+                                                    <a href="{{ route('member.edit',['member_id'=>$item->member_id]) }}" class="btn btn-gradient-success btn-sm">
                                                         <i class="mdi mdi-tooltip-edit"></i>
                                                     </a>
                                                     <form method="POST" class="d-inline"
-                                                            action="{{ route('product.destroy',['product_id'=>$item->product_id]) }}"
+                                                            action="{{ route('member.destroy',['member_id'=>$item->member_id]) }}"
                                                             onsubmit="return confirm('แน่ใจว่าต้องการลบข้อมูล?')">
                                                         @csrf
                                                         @method('DELETE')
@@ -68,7 +68,7 @@
                           </tbody>
                         </table>
                         <br>
-                            {{ $product->links() }}
+                            {{ $member->links() }}
                       </div>
                     </div>
                   </div>
