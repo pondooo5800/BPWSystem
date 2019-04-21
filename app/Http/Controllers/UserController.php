@@ -41,15 +41,6 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
-        $user = new User();
-        $user->username = $request->username;
-        $user->password = $request->password;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->tel = $request->tel;
-        $user->save();
-
-        return redirect()->route('user.index')->with('feedback', 'บันทึกข้อมูลเรียบร้อยแล้ว');
     }
 
     /**
@@ -72,6 +63,9 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
+        return view('backend.user.edit',[
+            'user' => $user
+        ]);
     }
 
     /**
@@ -82,8 +76,16 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(UserRequest $request, User $user)
     {
+        $user->username = $request->username;
+        $user->password = $request->password;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->tel = $request->tel;
+        $user->save();
+
+        return redirect()->route('user.index');
     }
 
     /**
@@ -95,5 +97,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
+        $user->delete();
+        return redirect()->route('user.index')->with('feedback','ลบข้อมูลเรียบร้อยแล้ว');
     }
 }

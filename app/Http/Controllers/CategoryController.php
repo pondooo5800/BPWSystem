@@ -81,7 +81,7 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(CaregoryRequest $request, Category $category)
     {
         $category->category_name = $request->category_name;
         $category->save();

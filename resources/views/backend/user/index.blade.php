@@ -1,5 +1,4 @@
 @extends('layouts.frontend')
-
 @section('content')
 <div class="content-wrapper">
     <div class="page-header">
@@ -47,11 +46,11 @@
                                     <td>{{ $item->tel }}</td>
                                     <td>
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <a href="{{ route('product.edit',['product_id'=>$item->product_id]) }}" class="btn btn-gradient-success btn-sm">
+                                                    <a href="{{ route('user.edit',['id'=>$item->id]) }}" class="btn btn-gradient-success btn-sm">
                                                         <i class="mdi mdi-tooltip-edit"></i>
                                                     </a>
                                                     <form method="POST" class="d-inline"
-                                                            action="{{ route('user.destroy',['product_id'=>$item->product_id]) }}"
+                                                            action="{{ route('user.destroy',['id'=>$item->id]) }}"
                                                             onsubmit="return confirm('แน่ใจว่าต้องการลบข้อมูล?')">
                                                         @csrf
                                                         @method('DELETE')

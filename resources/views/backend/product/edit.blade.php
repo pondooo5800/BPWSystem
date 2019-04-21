@@ -35,7 +35,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleSelectGender">ประเภทสินค้า</label>
-                                                    {{ Form::select('ctrgory_id', App\Category::all()->pluck('category_name','catrgory_id'), null, ['class' => 'selectpicker form-control', 'placeholder' => 'กรุณาเลือกประเภทสินค้า...', 'required','data-live-search="true"']) }}
+                                                    {{ Form::select('ctrgory_id', App\Category::all()->pluck('category_name','catrgory_id'), null, ['class' => 'form-control', 'placeholder' => 'กรุณาเลือกประเภทสินค้า...', 'required','data-live-search="true"']) }}
                                                         @if ($errors->has('ctrgory_id'))
                                                             <div class="invalid-feedback">{{ $errors->first('ctrgory_id') }}</div>
                                                         @endif
@@ -73,10 +73,7 @@
 @section('footerscript')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.13.4/jquery.mask.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>
 <script>
-    $('select').selectpicker();
     $('.stock').mask("####", {reverse: true});
     $('.price').mask("####", {reverse: true});
 </script>
