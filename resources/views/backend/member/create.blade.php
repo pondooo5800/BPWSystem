@@ -35,8 +35,8 @@
                                             <div class="form-group">
                                                 <label for="exampleSelectGender">เพศ</label>
                                                     {{ Form::select('gender', App\Gender::all()->pluck('gender_name','gender_id'), null, ['class' => 'form-control', 'placeholder' => 'กรุณาเลือกเพศ...', 'required']) }}
-                                                        @if ($errors->has('gender_id'))
-                                                            <div class="invalid-feedback">{{ $errors->first('gender_id') }}</div>
+                                                        @if ($errors->has('gender'))
+                                                            <div class="invalid-feedback">{{ $errors->first('gender') }}</div>
                                                         @endif
                                             </div>
                                             <div class="form-group">

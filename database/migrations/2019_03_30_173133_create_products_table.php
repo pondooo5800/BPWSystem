@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
 			$table->string('code', 13);
 			$table->string('name', 255);
 			$table->integer('stock');
-			$table->decimal('price',10,2);
+			$table->double('price',10,2);
             $table->integer('ctrgory_id')->unsigned();
             $table->foreign('ctrgory_id')->references('catrgory_id')->on('categories');
             $table->timestamps();

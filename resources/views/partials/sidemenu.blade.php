@@ -15,6 +15,8 @@
                     <div class="collapse" id="ui-product">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item"> <a class="nav-link" href="{{ route('product.index') }}">สินค้า</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ route('stock.index') }}">รับสินค้า</a></li>
+
                         </ul>
                     </div>
             </li>

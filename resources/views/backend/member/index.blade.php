@@ -43,7 +43,7 @@
                                     <td>{{ $item->member_id }}</td>
                                     <td>{{ $item->code }}</td>
                                     <td class="text-left">{{ $item->name }}</td>
-                                    <td class="text-left">{{ $item->gender }}</td>
+                                    <td class="text-left">{{ $item->gender_name }}</td>
                                     <td>{{ $item->total }}</td>
                                     <td>{{ $item->created_at }}</td>
                                     <td>

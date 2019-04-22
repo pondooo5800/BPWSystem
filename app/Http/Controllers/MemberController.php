@@ -15,7 +15,7 @@ class MemberController extends Controller
      */
     public function index()
     {
-        $member = Member::orderBy('member_id','desc')->paginate(10);
+        $member = Member::orderBy('member_id','desc')->leftJoin('genders', 'members.gender', '=', 'genders.gender_id')->paginate(10);
 
         return view('backend.member.index',[
             'member' => $member
