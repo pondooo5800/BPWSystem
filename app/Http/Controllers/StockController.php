@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Stock;
+use DB;
 use Illuminate\Http\Request;
+use App\Http\Requests\StockRequest;
 
 class StockController extends Controller
 {
@@ -27,7 +29,8 @@ class StockController extends Controller
      */
     public function create()
     {
-        return view('backend.stock.create');
+        $product_list = DB::table('products')->get();
+        return view('backend.stock.create')->with('product_list', $product_list);
     }
 
     /**
@@ -36,16 +39,14 @@ class StockController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StockRequest $request)
     {
         $stock = new Stock();
         $stock->product_id = $request->product_id;
         $stock->qty = $request->qty;
+
         $stock->save();
-
         return redirect()->route('stock.index')->with('feedback','บันทึกข้อมูลเรียบร้อยแล้ว');
-        // return $stock;
-
     }
 
     /**
@@ -67,9 +68,7 @@ class StockController extends Controller
      */
     public function edit(Stock $stock)
     {
-        return view('backend.stock.edit',[
-            'stock' => $stock
-        ]);    }
+    }
 
     /**
      * Update the specified resource in storage.

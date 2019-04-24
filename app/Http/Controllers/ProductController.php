@@ -49,7 +49,7 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->save();
 
-        return redirect()->route('product.index')->with('feedback','บันทึกข้อมูลเรียบร้อยแล้ว');
+        return redirect()->route('stock.create')->with('feedback','บันทึกข้อมูลเรียบร้อยแล้ว');
         // return $request->all();
 
     }

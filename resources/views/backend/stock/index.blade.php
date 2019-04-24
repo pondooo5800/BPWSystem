@@ -28,8 +28,8 @@
                             <tr>
                               <th>ลำดับ</th>
                               <th>รหัสการรับสินค้า</th>
-                              <th>จำนวนสินค้า</th>
                               <th>รหัสสินค้า</th>
+                              <th>จำนวนสินค้า</th>
                               <th>วัน/เวลา</th>
                             </tr>
                           </thead>
@@ -38,8 +38,8 @@
                                 <tr>
                                     <th scope="row">{{ $loop->iteration }}</th>
                                     <td>{{ $item->stock_id }}</td>
-                                    <td>{{ $item->qty }}</td>
                                     <td>{{ $item->product_id }}</td>
+                                    <td>{{ $item->qty }}</td>
                                     <td>{{ $item->created_at }}</td>
                                 </tr>
                             @endforeach

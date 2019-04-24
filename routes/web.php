@@ -24,3 +24,6 @@ Route::resource('/backend/product', 'ProductController')->middleware('auth');
 Route::resource('/backend/user', 'UserController')->middleware('auth');
 Route::resource('/backend/member', 'MemberController')->middleware('auth');
 Route::resource('/backend/stock', 'StockController')->middleware('auth');
+Route::resource('/backend/sell', 'SellController')->middleware('auth');
+
+Route::post('dynamic_dependent/fetch', 'DynamicDependent@fetch')->name('dynamicdependent.fetch');

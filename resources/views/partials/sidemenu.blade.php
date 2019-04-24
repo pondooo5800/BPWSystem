@@ -21,7 +21,7 @@
                     </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="pages/icons/mdi.html">
+                <a class="nav-link" href="{{ route('sell.index') }}">
                 <span class="menu-title">ข้อมูลการขาย</span>
                 <i class="mdi mdi-table-large menu-icon"></i>
                 </a>
