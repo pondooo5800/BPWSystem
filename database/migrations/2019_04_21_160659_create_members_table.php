@@ -18,7 +18,7 @@ class CreateMembersTable extends Migration
             $table->string('code', 13);
 			$table->string('name', 255);
             $table->integer('gender');
-            $table->integer('total');
+            $table->integer('time_total');
             $table->timestamps();
 
         });

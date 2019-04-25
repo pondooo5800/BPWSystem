@@ -44,7 +44,7 @@
                                     <td>{{ $item->code }}</td>
                                     <td class="text-left">{{ $item->name }}</td>
                                     <td class="text-left">{{ $item->gender_name }}</td>
-                                    <td>{{ $item->total }}</td>
+                                    <td>{{ $item->time_total }}</td>
                                     <td>{{ $item->created_at }}</td>
                                     <td>
                                             <div class="btn-group" role="group" aria-label="Basic example">

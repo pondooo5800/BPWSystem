@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Sell;
+use DB;
 use Illuminate\Http\Request;
 use App\Http\Requests\ProductRequest;
 
@@ -16,9 +18,13 @@ class ProductController extends Controller
     public function index()
     {
         $product = Product::orderBy('product_id','desc')->leftJoin('categories', 'products.ctrgory_id', '=', 'categories.catrgory_id')->paginate(10);
+        $product_stock = DB::select('select SUM(stock)as stock from products');
+        $sell_stock = DB::select('select SUM(sell_stock)as sell_stock from sells');
 
         return view('backend.product.index',[
-            'product' => $product
+            'product' => $product,
+            'product_stock' => $product_stock,
+            'sell_stock' => $sell_stock
         ]);
     }
 

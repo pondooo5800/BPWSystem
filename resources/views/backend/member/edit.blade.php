@@ -41,9 +41,9 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputName3">จำนวนครั้งที่ใช้บริการ</label>
-                                                    {{ Form::text('total', null,['class'=>'form-control total ','placeholder' => 'จำนวนครั้งที่ใช้บริการ','required']) }}
-                                                        @if ($errors->has('total'))
-                                                            <div class="invalid-feedback">{{ $errors->first('total') }}</div>
+                                                    {{ Form::text('time_total', null,['class'=>'form-control time_total ','placeholder' => 'จำนวนครั้งที่ใช้บริการ','required']) }}
+                                                        @if ($errors->has('time_total'))
+                                                            <div class="invalid-feedback">{{ $errors->first('time_total') }}</div>
                                                         @endif
                                             </div>
                                                 <br>
@@ -66,7 +66,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.13.4/jquery.mask.min.js"></script>
     <script>
-        $('.total').mask("####", {reverse: true});
+        $('.time_total').mask("####", {reverse: true});
         $('.code').mask("####", {reverse: true});
 
     </script>

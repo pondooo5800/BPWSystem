@@ -20,7 +20,8 @@ class SellController extends Controller
 
         return view('backend.sell.index',[
             'sell' => $sell
-        ]);    }
+        ]);
+    }
 
     /**
      * Show the form for creating a new resource.

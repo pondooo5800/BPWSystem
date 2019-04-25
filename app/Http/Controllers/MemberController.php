@@ -45,7 +45,7 @@ class MemberController extends Controller
         $member->code = $request->code;
         $member->name = $request->name;
         $member->gender = $request->gender;
-        $member->total = $request->total;
+        $member->time_total = $request->time_total;
 
         $member->save();
 
@@ -87,7 +87,7 @@ class MemberController extends Controller
         $member->code = $request->code;
         $member->name = $request->name;
         $member->gender = $request->gender;
-        $member->total = $request->total;
+        $member->time_total = $request->time_total;
 
         $member->save();
 

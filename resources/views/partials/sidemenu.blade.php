@@ -16,7 +16,7 @@
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item"> <a class="nav-link" href="{{ route('product.index') }}">สินค้า</a></li>
                             <li class="nav-item"> <a class="nav-link" href="{{ route('stock.index') }}">รับสินค้า</a></li>
-
+                            <li class="nav-item"> <a class="nav-link" href="{{ route('order.index') }}">สั่งซื้อสินค้า</a></li>
                         </ul>
                     </div>
             </li>
@@ -28,7 +28,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="pages/charts/chartjs.html">
+                <a class="nav-link" href="{{ route('report.index') }}">
                 <span class="menu-title">รายงาน</span>
                 <i class="mdi mdi-chart-bar menu-icon"></i>
                 </a>

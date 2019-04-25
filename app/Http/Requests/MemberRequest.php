@@ -27,7 +27,7 @@ class MemberRequest extends FormRequest
             'code' => 'required',
             'name' => 'required',
             'gender' => 'required',
-            'total' => 'required|numeric',
+            'time_total' => 'required|numeric',
         ];
     }
 
@@ -37,7 +37,7 @@ class MemberRequest extends FormRequest
             'code.required' => 'กรุณากรอกรหัสประจำตันักเรียน',
             'name.required' => 'กรุณากรอกชื่อ - นามสกุล',
             'gender.required' => 'กรุณาเลือกเพศ',
-            'total.required' => 'กรุณากรอกจำนวนครั้ง',
+            'time_total.required' => 'กรุณากรอกจำนวนครั้ง',
         ];
     }
 }
